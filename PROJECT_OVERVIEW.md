@@ -741,6 +741,20 @@ what builds trust. Use its results to update categories and gauge runner supply.
 > if anything here doesn't match what you're building, tell Seun before building around it.
 > Every place the app is waiting on you is marked `// TODO: ... @errand/api` in the code.
 
+### Start here
+
+The frontend MVP is on `main`: the poster and runner apps are built and run on mock data saved on the
+device until the backend exists.
+
+- **This section (§16):** every API call the app needs (inputs, outputs, which screen uses it), the rules the
+  backend must enforce, and what live updates and push notifications the app expects.
+- **`frontend/packages/types/src/index.ts`:** the shared data shapes (Task, Profile, Message, …). This is the
+  contract: agree with Seun before changing it.
+- **`// TODO: … @errand/api` comments:** each marks a mock that one of your calls replaces.
+- **Run the app:** `pnpm install`, then `pnpm web` (browser) or `pnpm start` (Expo Go, SDK 58). Needs Node 22.13+.
+- **Before building:** answer the open questions at the end of this section, and agree the API call names with
+  Seun so neither side builds against names the other changes.
+
 ### Data the app uses (`frontend/packages/types/src/index.ts`)
 
 - **Task**: `id, creator_id, runner_id?, title, description, category, subcategory?, price, status,
