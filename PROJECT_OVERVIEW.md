@@ -500,7 +500,7 @@ with permission checks and write to an audit log. Enable 2FA for admin logins.
 
 ## 11. Repository layout
 
-**Running the app:** from the repo root, `pnpm start` (QR code for Expo Go) or `pnpm web` (browser); these
+**Needs Node.js 22.13 or newer** (SDK 58). **Running the app:** from the repo root, `pnpm start` (QR code for Expo Go) or `pnpm web` (browser); these
 run the mobile app from its own folder. Plain `expo start` / `npx expo start` from the repo root shows a blank
 page, because Expo then treats the root (which has no app) as the project.
 
@@ -669,7 +669,8 @@ src/
 
 ## 13. Current status
 
-**Built:** Expo SDK 54 setup (runs in Expo Go and on web), navigation (auth/poster/runner stacks),
+**Built:** Expo SDK 58 setup (React Native 0.88, React 19.3; upgraded from 54 on 2026-11-26 because Expo Go on both
+stores is now 58; runs in Expo Go and on web), navigation (auth/poster/runner stacks),
 poster tabs (Home, Tasks, Ranks, Profile), theme (no hardcoded colors or sizes), poster home,
 post-task form with price hints and ₦500 validation, central category list (`categories.ts`) with
 subsections and the "Coming soon" Tech card, mode context and Profile mode switch, `Profile` /
@@ -998,3 +999,4 @@ Source of truth for these: `src/constants/categoryQuestions.ts` and `sharedQuest
 - Push the "Not accepted yet?" card as a notification when half the accept window has passed with no runner, so posters see it without opening the task.
 - Add a runner-side "Report a problem" (poster didn't show, wrong code, unsafe) so runners have the same safety net posters do.
 - Add a CI check that runs `tsc` and a web export on every push, so a broken build is caught before anyone pulls it.
+- Move testers to a development build (EAS) before launch, so a new Expo Go release can never break testing again.

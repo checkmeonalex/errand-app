@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Pressable, Text, TextInput, View, StyleSheet } from 'react-native';
+import { Pressable, Text, TextInput, View, StyleSheet, type TextInputInstance } from 'react-native';
 import { colors } from '../theme/colors';
 import { typography } from '../theme/typography';
 
@@ -15,7 +15,7 @@ type CodeInputProps = {
 // A row of boxes for a one-time code. One hidden text field does the typing,
 // so pasting a whole code and the phone's "fill code from email/SMS" both work.
 export function CodeInput({ length, value, onChange, onComplete, hasError }: CodeInputProps) {
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
 
   function handleChange(text: string) {
     const digits = text.replace(/\D/g, '').slice(0, length);

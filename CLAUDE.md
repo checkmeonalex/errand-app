@@ -26,6 +26,8 @@ When the user tells you a product decision changed (a category, price, rule), up
 `PROJECT_OVERVIEW.md` in the same change as the code, and say what you changed.
 
 ## Recent decisions (newest first)
+- Expo SDK 58 (2026-11-26): upgraded from 54 because Expo Go on both the App Store and Google Play is now 58.
+  Needs Node.js 22.13+. Use `expo install` for versions; start the app from the repo root with `pnpm start` / `pnpm web`.
 - Runner app (2026-10-26): four tabs (Find tasks · My jobs · Ranks · Profile); earnings card on runner
   home (no Earnings tab). Runners see "You earn ₦X" (+ fee on preview); posters never do. First accept shows
   the rules once, then one tap. Max 2 tasks at once. Drop free within 5 min, then counts; 3 → review. Taken

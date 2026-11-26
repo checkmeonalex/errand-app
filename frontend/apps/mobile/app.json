@@ -6,8 +6,9 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -23,7 +24,8 @@
           "photosPermission": "Taskly uses your photos so you can choose a profile picture.",
           "cameraPermission": "Taskly uses your camera so you can take a profile picture."
         }
-      ]
+      ],
+      "expo-web-browser"
     ]
   }
 }
