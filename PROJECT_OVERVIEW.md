@@ -500,6 +500,10 @@ with permission checks and write to an audit log. Enable 2FA for admin logins.
 
 ## 11. Repository layout
 
+**Running the app:** from the repo root, `pnpm start` (QR code for Expo Go) or `pnpm web` (browser); these
+run the mobile app from its own folder. Plain `expo start` / `npx expo start` from the repo root shows a blank
+page, because Expo then treats the root (which has no app) as the project.
+
 ```
 errand-app/
   CLAUDE.md                 # rules for working on the code (read automatically by Claude Code)
@@ -993,3 +997,4 @@ Source of truth for these: `src/constants/categoryQuestions.ts` and `sharedQuest
 - Once the first 15 runners are live, track "time to accept" per task in admin; it's the signal for when to open the runner waitlist.
 - Push the "Not accepted yet?" card as a notification when half the accept window has passed with no runner, so posters see it without opening the task.
 - Add a runner-side "Report a problem" (poster didn't show, wrong code, unsafe) so runners have the same safety net posters do.
+- Add a CI check that runs `tsc` and a web export on every push, so a broken build is caught before anyone pulls it.
