@@ -1,21 +1,40 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "jsx": "react-native",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "paths": {
-      "@errand/ui": ["frontend/packages/ui/src"],
-      "@errand/types": ["frontend/packages/types/src"],
-      "@errand/utils": ["frontend/packages/utils/src"],
-      "@errand/api": ["frontend/packages/api/src"],
-      "@errand/constants": ["frontend/packages/constants/src"]
+      "@errand/ui": [
+        "frontend/packages/ui/src"
+      ],
+      "@errand/types": [
+        "frontend/packages/types/src"
+      ],
+      "@errand/utils": [
+        "frontend/packages/utils/src"
+      ],
+      "@errand/api": [
+        "frontend/packages/api/src"
+      ],
+      "@errand/constants": [
+        "frontend/packages/constants/src"
+      ]
     }
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": "expo/tsconfig.base"
 }
